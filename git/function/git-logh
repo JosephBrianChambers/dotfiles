@@ -1,0 +1,12 @@
+#!/bin/bash
+
+cat <<-EOF
+  ## search commits
+  git log -p --author="Joe Chambers" -Gshopper -- '*controller.rb'
+    -p :: show patch
+    -G<regex> :: where commit contains regex
+    -- :: file matches
+
+  ## seach line(s) evolution
+  git log -L 16,33:/Users/joe/projects/coverhound/app/models/rater.rb
+EOF

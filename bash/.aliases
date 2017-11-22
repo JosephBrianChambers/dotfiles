@@ -1,0 +1,17 @@
+alias finder="open ~ -R"
+alias cp="cp -iv"
+alias rm="rm -iv"
+alias mv="mv -iv"
+alias ls="ls -FGh"
+alias df="df -h"
+alias ll="ls -alh"
+alias chmodx="chmod +x"
+alias diff="colordiff -u"
+# Use modern regexps for sed, i.e. "(one|two)", not "\(one\|two\)"
+alias sed="sed -E"
+alias be="bundle exec"
+alias lead-gen="/Users/joe/projects/coverhound/bin/lead-gen"
+alias editgit='edit ~/.gitconfig'
+alias editbash='edit ~/.bash_profile'
+alias reload='source ~/.bash_profile'
+

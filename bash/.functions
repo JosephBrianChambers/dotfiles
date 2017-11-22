@@ -1,0 +1,80 @@
+# Makes new Dir and jumps inside
+function mkd () {
+  mkdir -p "$1" && cd "$1";
+}
+
+function quote() {
+  Q=$(curl -s --connect-timeout 2 "http://www.quotationspage.com/random.php3" | iconv -c -f ISO-8859-1 -t UTF-8 | grep -m 1 "dt ")
+  TXT=$(echo "$Q" | sed -e 's/<\/dt>.*//g' -e 's/.*html//g' -e 's/^[^a-zA-Z]*//' -e 's/<\/a..*$//g')
+  W=$(echo "$Q" | sed -e 's/.*\/quotes\///g' -e 's/<.*//g' -e 's/.*">//g')
+  if [ "$W" -a "$TXT" ]; then
+    echo ""
+    echo "$DARK_WHITE “${TXT}”"
+    echo "$DARK_GREEN     - ${W}$RESET_COLOR"
+  fi
+}
+
+function versions() {
+  echo ""
+  printf "%sChecking versions...%s\n" $DARK_YELLOW $RESET_COLOR
+  echo "node $(node --version)"
+  echo "npm $(npm --version)"
+  echo "yarn $(yarn --version)"
+  echo "$(ruby -v)"
+  echo "$(git --version)"
+}
+
+function goog() {
+  # example usage
+  #
+  # google results page for fake news:
+  # goog fake news
+  #
+  # google results for fake news recent within past year
+  # goog fake news -r
+  #
+  # google resutls for fake news phrase, recent within past month
+  # goog -p "fake news" -rr
+  #
+  # google results for fake news recent within past 24 hours
+  # goog fake news -rrrr
+
+  local QUERY=""
+  local RECENT_PARAM=""
+  local PHRASE_QUERY=""
+
+  # https://medium.com/@Drew_Stokes/bash-argument-parsing-54f3b81a6a8f
+
+  while (( "$#" )); do
+    case "$1" in
+      -p) # phrase_query. must be quoted string
+        PHRASE_QUERY="\"$(echo $2 | sed 's/ /+/g')\""
+        shift 2
+        ;;
+      -r) # recent: past year
+        RECENT_PARAM="y"
+        shift
+        ;;
+      -rr) # recent: past month
+        RECENT_PARAM="m"
+        shift
+        ;;
+      -rrr) # recent: past week
+        RECENT_PARAM="w"
+        shift
+        ;;
+      -rrrr|rrrrr|rrrrrr|rrrrrrr|rrrrrrrr|rrrrrrrrr) # recent: past 24 hours
+        RECENT_PARAM="d"
+        shift
+        ;;
+      *) # preserve positional arguments
+        QUERY="$QUERY $1"
+        shift
+        ;;
+    esac
+  done
+
+  QUERY=$(echo $QUERY | sed 's/ /+/g')
+  PAGE="https://google.com/search?as_q=$QUERY&as_epq=$PHRASE_QUERY&as_qdr=$RECENT_PARAM"
+  open $PAGE
+}

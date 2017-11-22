@@ -1,6 +1,62 @@
-
 #!/usr/bin/env bash
 
-#inspired by https://github.com/kylealwyn/dotfiles
+# inspired by
+# https://github.com/kylealwyn/dotfiles
+# https://github.com/berfarah/dotfiles
 
+HOMEBREW_CASK_APPDIR="/Applications"
+USER_APPLICATION_SUPPORT_DIR="$HOME/Library/Application Support"
+
+cd ~/dotfiles
+
+echo '/n Installing Xcode Tools'
+xcode-select --install
+
+echo -e '\nBuilding Homebrew'
+if ! type "brew" > /dev/null; then
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+export HOMEBREW_CASK_OPTS="--appdir=$HOMEBREW_CASK_APPDIR"
+brew bundle -v
+brew cleanup
+
+echo -e '\nSetting up Chrome extensions'
+CHROME_EXTERNAL_EXTENSIONS_DIR="$USER_APPLICATION_SUPPORT_DIR/Google/Chrome/External Extensions"
+mkdir -p "${CHROME_EXTERNAL_EXTENSIONS_DIR}"
+for f in ~/dotfiles/chrome/external_extension/*; do
+  cp $f "${CHROME_EXTERNAL_EXTENSIONS_DIR}/."
+done
+
+echo -e '\nSetting up bash'
+rm ~/.bash_profile
+ln -s ~/dotfiles/bash/.bash_profile ~/.bash_profile
+
+echo -e '\nSetting up vim'
+rm ~/.vimrc
+ln -s ~/dotfiles/vim/.vimrc ~/.vimrc
+
+echo -e '\nSetting up git'
+ln -sf ~/dotfiles/git/.gitconfig ~/.gitconfig
+ln -sf ~/dotfiles/git/.gitignore_global ~/.gitignore_global
+mkdir -p ~/bin
+for f in ~/dotfiles/git/function/*; do
+  ln -sf $f ~/bin
+done
+
+echo -e '\nSetting up NVM'
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+echo -e '\nSetting up Sublime Text 3'
+SUBL_USER_PACKAGE_DIR="${USER_APPLICATION_SUPPORT_DIR}/Sublime Text 3/Packages/User"
+mkdir -p "${SUBL_USER_PACKAGE_DIR}"
+ln -sf ~/dotfiles/sublime_text_3/Package\ Control.sublime-settings "$SUBL_USER_PACKAGE_DIR/Package Control.sublime-settings"
+ln -sf ~/dotfiles/sublime_text_3/Preferences.sublime-settings "$SUBL_USER_PACKAGE_DIR/Preferences.sublime-settings"
+ln -sf ~/dotfiles/sublime_text_3/Default\ \(OSX\).sublime-keymap "$SUBL_USER_PACKAGE_DIR/Default (OSX).sublime-keymap"
+for f in ~/dotfiles/sublime_text_3/snippet/*; do
+  ln -sf "${f}" "${SUBL_USER_PACKAGE_DIR}"
+done
+
+echo -e '\nDone! some notes:'
+echo -e '\n- Need to manually install "package controll" package in sublime for sublime to auto-download packages'
 

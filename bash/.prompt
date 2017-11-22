@@ -1,0 +1,11 @@
+parse_git_branch() {
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+  echo "("${ref#refs/heads/}")"
+}
+
+PS1="$CYAN\d, \$(date +%H:%M)"
+  PS1+="$DARK_WHITE /\W"
+  PS1+="$DARK_YELLOW"
+  PS1+=' $(parse_git_branch)'
+  PS1+="$DARK_WHITE $ "
+  PS1+="$RESET_COLOR"

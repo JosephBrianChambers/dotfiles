@@ -1,0 +1,15 @@
+#!/bin/bash
+
+STASHED_CHANGES=`git stash`
+git checkout master
+git pull
+git checkout -
+git rebase master
+
+if [[ "$STASHED_CHANGES" != "No local changes to save" ]]; then
+  echo \!\!\!
+  echo \!\!\!
+  echo You have stashed changes. run 'git stash pop --index' to re-apply\!
+  echo
+  echo
+fi

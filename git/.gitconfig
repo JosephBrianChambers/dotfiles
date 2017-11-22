@@ -1,0 +1,40 @@
+[user]
+  name = Joe Chambers
+  email = josephbrianchambers@gmail.com
+[push]
+  default = simple
+[pull]
+  rebase = true
+[merge]
+  ff = true
+  stat = true
+[alias]
+  la = "!git config -l | grep alias | cut -c 7-"
+  bl = blame
+  s = status
+  br = branch
+  co = checkout
+  cob = checkout -b
+  aa = add -A
+  ci = commit
+  cm = !git add -A && git commit -m
+  save = !git add -A && git commit -m 'SAVEPOINT'
+  continue = reset HEAD~1 --mixed
+  wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+  amendi = commit --amend --no-edit
+  amendiiii = !git add -A && git commit --amend --no-edit && git push -f
+  show = show --color-words
+  diff = diff --color-words
+  diffc = diff --cached --color-words
+  log = log --word-diff
+  his = log --pretty=format:'%C(yellow)%h%C(reset) - %<(16)%an [%C(green)%ar%C(reset)] %s'
+  hist = log --pretty=format:'%C(yellow)%h%C(reset) - %<(16)%an [%C(green)%ar%C(reset)](%C(green)%ai%C(reset)) %s' --numstat
+  vlog = log --oneline --decorate --graph --all
+  glog = log -E -i --grep
+  bclean = "!f() { git checkout ${1-master} && git branch --merged ${1-master} | grep -v \"${1-master}\\|production\" | xargs git branch -d; }; f"
+  authors = "!f() { git log --format='%aN' | sort -u; }; f"
+[commit]
+  template = /Users/joe/.gitmessage.txt
+[status]
+  submoduleSummary = true
+  showUntrackedFiles = all
