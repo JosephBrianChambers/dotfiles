@@ -38,6 +38,7 @@ ln -s ~/dotfiles/vim/.vimrc ~/.vimrc
 echo -e '\nSetting up git'
 ln -sf ~/dotfiles/git/.gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/git/.gitignore_global ~/.gitignore_global
+l -sf ~/dotfiles/git/.git_message.txt ~/.git_message.txt
 mkdir -p ~/bin
 for f in ~/dotfiles/git/function/*; do
   ln -sf $f ~/bin
