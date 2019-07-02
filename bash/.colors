@@ -1,0 +1,48 @@
+# ANSI color and text formatting escape sequences
+# syntax for orginal 8 colors (3/4 bit): ESC[#;#)m
+# syntax for expanded 256 colors (8 bit): ESC[38;5;#m
+# note: there can be multiple text formatting sequence numbers separated by a ; and ending with an m where the # is of the following values:
+# attributes
+#   0 normal display
+#   1 bold
+#   4 underline (mono only)
+#   5 blink on
+#   7 reverse video on
+#   8 nondisplayed (invisible)
+# foreground colors
+#   30  black
+#   31  red
+#   32  green
+#   33  yellow
+#   34  blue
+#   35  magenta
+#   36  cyan
+#   37  white
+# background colors
+#   40  black
+#   41  red
+#   42  green
+#   43  yellow
+#   44  blue
+#   45  magenta
+#   46  cyan
+#   47  white
+
+reset_color='\e[m'
+black='\e[0;30m'
+blackb='\e[1;30m'
+red='\e[0;31m'
+redb='\e[1;31m'
+green='\e[0;32m'
+greenb='\e[1;32m'
+yellow='\e[0;33m'
+yellowb='\e[1;33m'
+blue='\e[0;34m'
+blueb='\e[1;34m'
+purple='\e[0;35m'
+purpleb='\e[1;35m'
+lightblue='\e[0;36m'
+lightblueb='\e[1;36m'
+white='\e[0;37m'
+whiteb='\e[1;37m'
+cyan='\e[38;5;51m'
