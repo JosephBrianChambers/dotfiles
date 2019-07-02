@@ -5,12 +5,15 @@
 	],
 	"installed_packages":
 	[
+		"Ansible",
 		"Babel",
 		"Better CoffeeScript",
+		"Blame Explorer",
+		"Dockerfile Syntax Highlighting",
 		"Dotfiles Syntax Highlighting",
-		"Git",
 		"Indent XML",
 		"MarkdownLivePreview",
+		"nginx",
 		"Package Control",
 		"Pretty JSON",
 		"SCSS",
