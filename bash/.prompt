@@ -3,9 +3,8 @@ parse_git_branch() {
   echo "("${ref#refs/heads/}")"
 }
 
-PS1="$CYAN\d, \$(date +%H:%M)"
-  PS1+="$DARK_WHITE /\W"
-  PS1+="$DARK_YELLOW"
-  PS1+=' $(parse_git_branch)'
-  PS1+="$DARK_WHITE $ "
-  PS1+="$RESET_COLOR"
+PS1="\[${lightblue}\]\d, \$(date +%H:%M)"
+  PS1+="\[${white}\] /\W"
+  PS1+="\[${yellow}\] \$(parse_git_branch)"
+  PS1+="\[${white}\] $ "
+  PS1+="\[$reset_color\]"

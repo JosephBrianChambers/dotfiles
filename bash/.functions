@@ -9,14 +9,14 @@ function quote() {
   W=$(echo "$Q" | sed -e 's/.*\/quotes\///g' -e 's/<.*//g' -e 's/.*">//g')
   if [ "$W" -a "$TXT" ]; then
     echo ""
-    echo "$DARK_WHITE “${TXT}”"
-    echo "$DARK_GREEN     - ${W}$RESET_COLOR"
+    echo "$white “${TXT}”"
+    echo "$green     - ${W}$color_end"
   fi
 }
 
 function versions() {
   echo ""
-  printf "%sChecking versions...%s\n" $DARK_YELLOW $RESET_COLOR
+  printf "${yellow}Checking versions...${reset_color}\n"
   echo "node $(node --version)"
   echo "npm $(npm --version)"
   echo "yarn $(yarn --version)"

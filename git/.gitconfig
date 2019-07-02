@@ -38,3 +38,5 @@
 [status]
   submoduleSummary = true
   showUntrackedFiles = all
+[blame]
+	date = short

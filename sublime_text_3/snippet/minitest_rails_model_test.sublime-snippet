@@ -1,0 +1,26 @@
+<snippet>
+  <content><![CDATA[
+require "test_helper"
+require "minitest/spec"
+
+class ${1:class-name}Test < ActiveSupport::TestCase
+  extend Minitest::Spec::DSL
+
+  subject { build(${2:factory}) }
+
+  describe "#${3:method-name}" do
+    describe "when ${4:criteria}" do
+      let(:foo) { "bar" }
+
+      it "${5:does-shit}" do
+        $6
+      end
+    end
+  end
+end
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>mtm</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <!-- <scope>source.python</scope> -->
+</snippet>

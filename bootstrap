@@ -21,7 +21,7 @@ brew bundle -v
 brew cleanup
 
 echo -e '\nSetting up Chrome extensions'
-CHROME_EXTERNAL_EXTENSIONS_DIR="$USER_APPLICATION_SUPPORT_DIR/Google/Chrome/External Extensions"
+CHROME_EXTERNAL_EXT ENSIONS_DIR="$USER_APPLICATION_SUPPORT_DIR/Google/Chrome/External Extensions"
 mkdir -p "${CHROME_EXTERNAL_EXTENSIONS_DIR}"
 for f in ~/dotfiles/chrome/external_extension/*; do
   cp $f "${CHROME_EXTERNAL_EXTENSIONS_DIR}/."
