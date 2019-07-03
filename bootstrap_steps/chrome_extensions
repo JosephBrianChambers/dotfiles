@@ -1,0 +1,9 @@
+function bootstrap_chrome_extensions() {
+  local user_application_support_dir="$HOME/Library/Application Support"
+  local chrome_external_extensions_dir="$user_application_support_dir/Google/Chrome/External Extensions"
+  mkdir -p "$chrome_external_extensions_dir"
+
+  for f in ~/dotfiles/chrome/external_extension/*; do
+    cp $f "$chrome_external_extensions_dir/."
+  done
+}

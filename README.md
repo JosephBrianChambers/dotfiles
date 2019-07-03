@@ -1,10 +1,11 @@
 # Installing
-
 ```
 $ cd ~
 $ git clone git@github.com:JosephBrianChambers/dotfiles.git
-$ cd dotfiles
-$ ./bootstrap
+$ ./dotfiles/bootstrap
+```
 
 done
-```
+
+(and for a specfic setup step, supply argument(s), ie `bootstrap git vim`)
+

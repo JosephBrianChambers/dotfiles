@@ -1,0 +1,12 @@
+function bootstrap_sublime() {
+  local user_application_support_dir="$HOME/Library/Application Support"
+  local subl_user_package_dir="${user_application_support_dir}/Sublime Text 3/Packages/User"
+  mkdir -p "${subl_user_package_dir}"
+  ln -sf ~/dotfiles/sublime_text_3/Package\ Control.sublime-settings "$subl_user_package_dir/Package Control.sublime-settings"
+  ln -sf ~/dotfiles/sublime_text_3/Preferences.sublime-settings "$subl_user_package_dir/Preferences.sublime-settings"
+  ln -sf ~/dotfiles/sublime_text_3/Default\ \(OSX\).sublime-keymap "$subl_user_package_dir/Default (OSX).sublime-keymap"
+
+  for f in ~/dotfiles/sublime_text_3/snippet/*; do
+    ln -sf "${f}" "${subl_user_package_dir}"
+  done
+}
