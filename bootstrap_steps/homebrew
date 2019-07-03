@@ -1,0 +1,10 @@
+function bootstrap_homebrew() {
+  export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+  if ! type "brew" > /dev/null; then
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  fi
+
+  brew bundle -v --file="~/dotfiles/brew/.brewfile"
+  brew cleanup
+}
