@@ -18,6 +18,7 @@ all_steps=(
   "git"
   "nvm"
   "sublime"
+  "gem"
 )
 
 for step in ${@-"${all_steps[@]}"}; do

@@ -1,0 +1,3 @@
+function bootstrap_gem() {
+  ln -sf ~/dotfiles/gem/.gemrc.yml ~/.gemrc
+}
