@@ -1,12 +1,12 @@
 tap 'caskroom/cask'
 tap 'homebrew/bundle'
-tap 'homebrew/dupes'
+# tap 'homebrew/dupes'
 
 # brew 'ack' # text search
 # brew 'android-sdk' # android sdk and tools
-brew 'awscli'
-brew 'bash-completion'
-brew 'bcrypt'
+# brew 'awscli'
+# brew 'bash-completion'
+# brew 'bcrypt'
 # brew 'calc' # calculator
 # brew 'chamber'
 # brew 'cmake'
@@ -14,14 +14,15 @@ brew 'bcrypt'
 # brew 'findutils'
 # brew 'freetype'
 # brew 'fzf' # fuzzy search
-brew 'git-crypt'
+brew 'git'
+# brew 'git-crypt'
 # brew 'gpg' # resource signer
 # brew 'gradle' # android build system
 # brew 'htop' # better top
-brew 'httpie'
+# brew 'httpie'
 # brew 'hub'
 # brew 'icu4c'
-brew 'imagemagick'
+# brew 'imagemagick'
 # brew 'jpeg'
 # brew 'jpegoptim' # optimise jpegs
 # brew 'libevent'
@@ -29,31 +30,32 @@ brew 'imagemagick'
 # brew 'libtiff'
 # brew 'libtool'
 # brew 'micro' # terminal editor
-brew 'mongodb'
+# brew 'mongodb'
 # brew 'moreutils'
-brew 'mysql'
-brew 'node'
-brew 'nodenv' # node version manager
-brew 'openssl'
-brew 'pkg-config'
-brew 'postgresql'
-brew 'qt'
-brew 'rbenv' # ruby version manager
-brew 'readline'
+# brew 'mysql'
+# brew 'node'
+# brew 'nodenv' # node version manager
+# brew 'openssl'
+# brew 'pkg-config'
+# brew 'postgresql'
+brew 'python'
+# brew 'qt'
+# brew 'rbenv' # ruby version manager
+# brew 'readline'
 # brew 'reattach-to-user-namespace' # osx helper for tmux
-brew 'redis'
-brew 'ruby-build'
+# brew 'redis'
+# brew 'ruby-build'
 # brew 'terminal-notifier' # macos growl messages from terminal
 # brew 'the_silver_searcher' # better ack: ag
 # brew 'tmux' # terminal multiplexer
 # brew 'tree' # directory tree view
 # brew 'unrar' # unarchive rar files
-# brew 'vim' # vim8
+brew 'vim' # vim8
 # brew 'watchman'
-brew 'wget' # better curl
+# brew 'wget' # better curl
 # brew 'xz'
-brew 'yarn' # node package manager
-brew 'youtube-dl' # download youtube vids
+# brew 'yarn' # node package manager
+# brew 'youtube-dl' # download youtube vids
 # brew 'z' # directory changer
 cask '1password'
 # cask 'amphetamine'
@@ -61,10 +63,10 @@ cask '1password'
 # cask 'atom'
 # cask 'avast'
 # cask 'dash'
-cask 'dropbox'
+# cask 'dropbox'
 # cask 'evernote'
-cask 'firefox'
-cask 'flux'
+# cask 'firefox'
+# cask 'flux'
 cask 'google-chrome'
 cask 'iterm2'
 # cask 'kap'
@@ -72,12 +74,12 @@ cask 'iterm2'
 # cask 'menubar-stats'
 # cask 'micro-snitch'
 # cask 'numi'
-cask 'postman'
-cask 'sequel-pro'
+# cask 'postman'
+# cask 'sequel-pro'
 # cask 'sketch'
-cask 'slack'
+# cask 'slack'
 # cask 'sourcetree'
 # cask 'spotify'
 cask 'sublime-text'
 # cask 'transmit'
-cask 'vlc'
+# cask 'vlc'

@@ -1,6 +1,7 @@
 function bootstrap_git() {
   ln -sf ~/dotfiles/git/.gitconfig ~/.gitconfig
   ln -sf ~/dotfiles/git/.gitignore_global ~/.gitignore_global
+  ln -sf ~/dotfiles/git/.git_message.txt ~/.git_message.txt
   mkdir -p ~/bin
 
   for f in ~/dotfiles/git/function/*; do
