@@ -1,4 +1,4 @@
 function bootstrap_xcode() {
   printf "\nInstalling Xcode Tools\n"
-  xcode-select --install
+  xcode-select --install || true
 }

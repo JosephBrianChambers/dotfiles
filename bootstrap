@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# https://coderwall.com/p/fkfaqq/safer-bash-scripts-with-set-euxo-pipefail
+set -euo pipefail
+
 # inspired by
 # https://github.com/kylealwyn/dotfiles
 # https://github.com/berfarah/dotfiles
@@ -24,4 +27,5 @@ done
 
 printf 'Done! some notes:\n'
 printf 'Need to manually install "package controll" package in sublime for sublime to auto-download packages\n'
+printf 'manually install chrome extension: https://github.com/iamadamdev/bypass-paywalls-chrome\n'
 
