@@ -16,7 +16,7 @@ all_steps=(
   "bash"
   "vim"
   "git"
-  "nvm"
+  # "nvm"
   "sublime"
   "gem"
 )
@@ -26,7 +26,12 @@ for step in ${@-"${all_steps[@]}"}; do
   $"bootstrap_$step"
 done
 
-printf 'Done! some notes:\n'
+printf 'Done! manual steps:\n'
 printf 'Need to manually install "package controll" package in sublime for sublime to auto-download packages\n'
 printf 'manually install chrome extension: https://github.com/iamadamdev/bypass-paywalls-chrome\n'
+printf 'per project files to possibly copy:\n'
+printf '.sublime-workspace and .sublime-project files\n'
+printf '<project root>/.git/info/exclude\n'
+printf 'git ignored/excluded scripts'
+
 

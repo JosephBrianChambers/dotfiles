@@ -1,4 +1,5 @@
 function bootstrap_bash() {
+  touch ~/.bash_profile
   rm ~/.bash_profile
   ln -s ~/dotfiles/bash/.bash_profile ~/.bash_profile
 }

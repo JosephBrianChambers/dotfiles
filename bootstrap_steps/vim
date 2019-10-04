@@ -1,4 +1,5 @@
 function bootstrap_vim() {
+  touch ~/.vimrc
   rm ~/.vimrc
   ln -s ~/dotfiles/vim/.vimrc ~/.vimrc
 }
